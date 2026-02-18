@@ -60,9 +60,9 @@ function App() {
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center">About</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto text-center leading-relaxed mb-12">
-            With over 12 years leading user research at companies like Peloton, Vimeo, and PwC, I help product teams
-            make confident, customer-informed decisions. I specialize in building research practices from the ground
-            up and translating qualitative and quantitative findings into product strategy that moves the needle.
+            With 12+ years of experience, I conduct mixed-methods research to uncover actionable insights that drive
+            product growth. I am a collaborator who translates complex insights into compelling narratives that shape
+            product, design, and marketing roadmaps.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             {[
@@ -87,38 +87,40 @@ function App() {
             {[
               {
                 company: 'Freelance',
-                title: 'Lead User Researcher',
-                period: '2024 – Present',
+                title: 'Lead User Research & Digital Strategy Consultant',
+                period: 'May 2024 – Present',
                 highlights: [
-                  'Partnering with startups and enterprise clients to lead end-to-end research initiatives',
-                  'Delivering strategic insights that inform product roadmaps and go-to-market strategy',
+                  'Lead user research for startups, uncovering insights to drive product and design decisions and go-to-market strategies',
                 ],
               },
               {
-                company: 'Peloton',
-                title: 'Director of User Research',
-                period: '2021 – 2024',
+                company: 'Peloton Interactive',
+                title: 'Director of User Research, Growth & eCommerce',
+                subtitle: 'Senior Manager of User Research, Growth & eCommerce (2021–2022)',
+                period: 'Jan 2021 – May 2024',
                 highlights: [
-                  'Led a team of researchers supporting hardware, software, and content product lines',
-                  'Established scalable research operations and insight repositories across the organization',
+                  'Established and grew the user research program from a 2-person US-based qualitative team to an 8-person global mixed-methods research and operations team',
+                  'Defined and led research studies that informed product and marketing decisions, influenced roadmap priorities, and led to direct metrics improvements in acquisition, conversion, and retention',
+                  'Optimized team structure and efficiency by building processes, defining leveling & hiring strategy, selecting vendors, and managing budgets',
                 ],
               },
               {
                 company: 'Vimeo',
-                title: 'Senior Manager, UX Research',
-                period: '2020 – 2021',
+                title: 'Senior Manager, UX Research & Customer Insights',
+                period: 'Oct 2020 – Jan 2021',
                 highlights: [
-                  'Built and managed the UX research function for Vimeo\'s enterprise video platform',
-                  'Drove research-informed product decisions for key growth and retention initiatives',
+                  'Led UX research and customer insights for Vimeo\'s enterprise video platform',
                 ],
               },
               {
-                company: 'PwC',
+                company: 'PwC | Experience Center',
                 title: 'Manager, User Research & Product Strategy',
-                period: '2013 – 2020',
+                subtitle: 'Senior Associate (2015–2019) · Experienced Associate (2013–2015)',
+                period: 'May 2013 – Oct 2020',
                 highlights: [
-                  'Led user research and product strategy for digital transformation engagements across Fortune 500 clients',
-                  'Developed human-centered design practices within PwC\'s consulting practice',
+                  'Led UX workstreams for 7 Fortune 500 clients from research through solution implementation',
+                  'Defined product roadmap for a pharmaceutical application using machine learning, leading to ~$3M for the next phase of work',
+                  'Co-led the creation of PwC\'s first Usability Testing Service offering, saving clients $50K–$100K per project',
                 ],
               },
             ].map((role, i) => (
@@ -134,7 +136,11 @@ function App() {
                     <h3 className="text-xl font-bold">{role.company}</h3>
                     <span className="text-sm text-gray-400 font-medium">{role.period}</span>
                   </div>
-                  <p className="text-accent-600 font-medium mb-3">{role.title}</p>
+                  <p className="text-accent-600 font-medium mb-1">{role.title}</p>
+                  {role.subtitle && (
+                    <p className="text-gray-400 text-sm mb-3">{role.subtitle}</p>
+                  )}
+                  {!role.subtitle && <div className="mb-3" />}
                   <ul className="space-y-1">
                     {role.highlights.map((h) => (
                       <li key={h} className="text-gray-600 text-sm leading-relaxed flex gap-2">
@@ -217,22 +223,19 @@ function App() {
             {[
               'User Interviews',
               'Usability Testing',
-              'Survey Design & Analysis',
+              'Survey Design',
               'Journey Mapping',
-              'Persona Development',
-              'A/B Testing',
-              'Card Sorting',
-              'Heuristic Evaluation',
-              'Competitive Analysis',
               'Diary Studies',
-              'Stakeholder Workshops',
-              'Research Ops',
-              'Quantitative Analysis',
-              'Ethnographic Research',
-              'Prototype Testing',
-              'Information Architecture',
-              'Data Synthesis',
-              'Research Democratization',
+              'Competitive Analysis',
+              'Heuristic Analysis',
+              'Ethnography',
+              'Card Sorting',
+              'A/B Testing',
+              'Focus Groups',
+              'Research Roadmapping',
+              'Research Benchmarking',
+              'Workshop Facilitation',
+              'Mixed-Methods Research',
             ].map((skill) => (
               <span
                 key={skill}
@@ -253,12 +256,12 @@ function App() {
             <div className="bg-white p-8 rounded-xl border border-gray-100 text-center">
               <h3 className="text-xl font-bold mb-1">Kellogg School of Management</h3>
               <p className="text-accent-600 font-medium mb-1">MBA</p>
-              <p className="text-gray-400 text-sm">Northwestern University</p>
+              <p className="text-gray-400 text-sm">Northwestern University, 2018–2021</p>
             </div>
             <div className="bg-white p-8 rounded-xl border border-gray-100 text-center">
               <h3 className="text-xl font-bold mb-1">University of Miami</h3>
-              <p className="text-accent-600 font-medium mb-1">BBA</p>
-              <p className="text-gray-400 text-sm">Herbert Business School</p>
+              <p className="text-accent-600 font-medium mb-1">BBA, Marketing & Management</p>
+              <p className="text-gray-400 text-sm">2008–2012</p>
             </div>
           </div>
         </div>

@@ -2,3 +2,8 @@ node_modules
 dist
 .DS_Store
 *.local
+
+# Reference files (not for production)
+*.pdf
+linkedin_*.png
+nehali_headshot.png
