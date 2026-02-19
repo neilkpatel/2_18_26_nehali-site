@@ -12,10 +12,9 @@ function App() {
             Nehali Patel
           </button>
           <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
-            <button onClick={() => scrollTo('about')} className="hover:text-accent-600 transition-colors">About</button>
-            <button onClick={() => scrollTo('experience')} className="hover:text-accent-600 transition-colors">Experience</button>
             <button onClick={() => scrollTo('services')} className="hover:text-accent-600 transition-colors">Services</button>
-            <button onClick={() => scrollTo('skills')} className="hover:text-accent-600 transition-colors">Skills</button>
+            <button onClick={() => scrollTo('experience')} className="hover:text-accent-600 transition-colors">Experience</button>
+            <button onClick={() => scrollTo('education')} className="hover:text-accent-600 transition-colors">Education</button>
             <button onClick={() => scrollTo('contact')} className="hover:text-accent-600 transition-colors">Contact</button>
           </div>
         </div>
@@ -36,8 +35,20 @@ function App() {
             User Research & Digital Strategy Consultant
           </p>
           <p className="text-lg text-gray-600 max-w-2xl mb-10 leading-relaxed">
-            I conduct mixed-methods research to uncover actionable insights that drive product growth.
+            I conduct mixed-methods research to uncover actionable insights that drive product growth. I translate complex findings into compelling narratives that shape product, design, and marketing roadmaps.
           </p>
+          <div className="grid grid-cols-3 gap-8 max-w-md mb-10">
+            {[
+              { number: '12+', label: 'Years Experience' },
+              { number: '7', label: 'Fortune 500 Clients' },
+              { number: 'Kellogg', label: 'MBA' },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-2xl font-bold text-accent-600">{stat.number}</div>
+                <div className="text-gray-500 text-sm font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </div>
           <div className="flex gap-4">
             <button
               onClick={() => scrollTo('contact')}
@@ -46,33 +57,68 @@ function App() {
               Get in Touch
             </button>
             <button
-              onClick={() => scrollTo('experience')}
+              onClick={() => scrollTo('services')}
               className="px-8 py-3 border-2 border-gray-200 rounded-lg font-medium hover:border-accent-600 hover:text-accent-600 transition-colors"
             >
-              View Experience
+              What I Do
             </button>
           </div>
         </div>
       </section>
 
-      {/* About */}
-      <section id="about" className="py-20 px-6 bg-gray-50">
+      {/* Services */}
+      <section id="services" className="py-20 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">About</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto text-center leading-relaxed mb-12">
-            With 12+ years of experience, I conduct mixed-methods research to uncover actionable insights that drive
-            product growth. I am a collaborator who translates complex insights into compelling narratives that shape
-            product, design, and marketing roadmaps.
+          <h2 className="text-3xl font-bold mb-4 text-center">What I Do</h2>
+          <p className="text-gray-500 text-center mb-12 max-w-2xl mx-auto">
+            I offer a range of research and strategy services tailored to your product team's needs.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { number: '12+', label: 'Years Experience' },
-              { number: '7', label: 'Fortune 500 Clients' },
-              { number: 'Kellogg', label: 'MBA' },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-3xl font-bold text-accent-600">{stat.number}</div>
-                <div className="text-gray-500 mt-1 font-medium">{stat.label}</div>
+              {
+                title: 'User Research Strategy',
+                desc: 'Design comprehensive research programs aligned with business goals — from stakeholder alignment to methodology selection and roadmap planning.',
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
+                  </svg>
+                ),
+              },
+              {
+                title: 'Usability Testing & Insights',
+                desc: 'Plan and execute moderated and unmoderated usability studies, synthesize findings, and deliver clear recommendations your team can act on.',
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                  </svg>
+                ),
+              },
+              {
+                title: 'Product & Growth Research',
+                desc: 'Identify opportunities for product-led growth through competitive analysis, customer segmentation, and behavioral research.',
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                  </svg>
+                ),
+              },
+              {
+                title: 'Research Team Building & Ops',
+                desc: 'Stand up research functions from scratch — hiring, tooling, processes, and templates — so your team can scale insight-driven decisions.',
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                  </svg>
+                ),
+              },
+            ].map((service) => (
+              <div
+                key={service.title}
+                className="bg-white p-8 rounded-xl border border-gray-100 hover:border-accent-200 hover:shadow-md transition-all"
+              >
+                <div className="text-accent-600 mb-4">{service.icon}</div>
+                <h3 className="text-lg font-bold mb-2">{service.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{service.desc}</p>
               </div>
             ))}
           </div>
@@ -156,100 +202,8 @@ function App() {
         </div>
       </section>
 
-      {/* Services */}
-      <section id="services" className="py-20 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4 text-center">What I Do</h2>
-          <p className="text-gray-500 text-center mb-12 max-w-2xl mx-auto">
-            I offer a range of research and strategy services tailored to your product team's needs.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                title: 'User Research Strategy',
-                desc: 'Design comprehensive research programs aligned with business goals — from stakeholder alignment to methodology selection and roadmap planning.',
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
-                  </svg>
-                ),
-              },
-              {
-                title: 'Usability Testing & Insights',
-                desc: 'Plan and execute moderated and unmoderated usability studies, synthesize findings, and deliver clear recommendations your team can act on.',
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                  </svg>
-                ),
-              },
-              {
-                title: 'Product & Growth Research',
-                desc: 'Identify opportunities for product-led growth through competitive analysis, customer segmentation, and behavioral research.',
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
-                  </svg>
-                ),
-              },
-              {
-                title: 'Research Team Building & Ops',
-                desc: 'Stand up research functions from scratch — hiring, tooling, processes, and templates — so your team can scale insight-driven decisions.',
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                  </svg>
-                ),
-              },
-            ].map((service) => (
-              <div
-                key={service.title}
-                className="bg-white p-8 rounded-xl border border-gray-100 hover:border-accent-200 hover:shadow-md transition-all"
-              >
-                <div className="text-accent-600 mb-4">{service.icon}</div>
-                <h3 className="text-lg font-bold mb-2">{service.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{service.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Skills */}
-      <section id="skills" className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center">Skills & Methods</h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              'User Interviews',
-              'Usability Testing',
-              'Survey Design',
-              'Journey Mapping',
-              'Diary Studies',
-              'Competitive Analysis',
-              'Heuristic Analysis',
-              'Ethnography',
-              'Card Sorting',
-              'A/B Testing',
-              'Focus Groups',
-              'Research Roadmapping',
-              'Research Benchmarking',
-              'Workshop Facilitation',
-              'Mixed-Methods Research',
-            ].map((skill) => (
-              <span
-                key={skill}
-                className="px-4 py-2 bg-accent-50 text-accent-700 rounded-full text-sm font-medium border border-accent-100"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Education */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section id="education" className="py-20 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Education</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
