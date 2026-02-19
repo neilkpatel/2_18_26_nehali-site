@@ -277,19 +277,23 @@ function App() {
           <Reveal>
             <h2 className="text-3xl font-bold mb-12 text-center">Education</h2>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Reveal delay={0}>
-              <div className="bg-white p-8 rounded-xl border border-gray-200/60 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                <h3 className="text-xl font-bold mb-1">Kellogg School of Management</h3>
-                <p className="text-accent-600 font-medium mb-1">MBA</p>
-                <p className="text-gray-400 text-sm">Northwestern University, 2018–2021</p>
+              <div className="bg-white rounded-xl border border-gray-200/60 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden h-full">
+                <div className="border-l-4 border-accent-500 p-7 h-full">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Kellogg School of Management</h3>
+                  <p className="text-accent-600 font-medium mb-0.5">MBA</p>
+                  <p className="text-gray-400 text-sm">Northwestern University, 2018–2021</p>
+                </div>
               </div>
             </Reveal>
             <Reveal delay={100}>
-              <div className="bg-white p-8 rounded-xl border border-gray-200/60 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                <h3 className="text-xl font-bold mb-1">University of Miami</h3>
-                <p className="text-accent-600 font-medium mb-1">BBA, Marketing & Management</p>
-                <p className="text-gray-400 text-sm">2008–2012</p>
+              <div className="bg-white rounded-xl border border-gray-200/60 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden h-full">
+                <div className="border-l-4 border-accent-500 p-7 h-full">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">University of Miami</h3>
+                  <p className="text-accent-600 font-medium mb-0.5">BBA, Marketing & Management</p>
+                  <p className="text-gray-400 text-sm">2008–2012</p>
+                </div>
               </div>
             </Reveal>
           </div>
