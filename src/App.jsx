@@ -207,14 +207,14 @@ function App() {
           <Reveal>
             <h2 className="text-3xl font-bold mb-14 text-center">Experience</h2>
           </Reveal>
-          <div className="space-y-0">
+          <div className="space-y-6">
             {[
               {
                 company: 'Lead User Research & Digital Strategy Consultant',
                 period: 'May 2024 – Present',
                 highlights: [
-                  'Lead research strategy and execution for multiple AI startups by defining research programs, informing prioritization of opportunities, and guiding teams toward clear product, design, and go-to-market decisions',
-                  'Shape product strategy and future vision through research and audience definition, collaborating with product, design, and business teams to align on priorities and opportunities',
+                  <>Lead research strategy and execution for <strong className="text-gray-800">multiple AI startups</strong> by defining research programs, informing prioritization of opportunities, and guiding teams toward clear product, design, and go-to-market decisions</>,
+                  <>Shape product strategy and future vision through research and audience definition, collaborating with <strong className="text-gray-800">product, design, and business teams</strong> to align on priorities and opportunities</>,
                 ],
               },
               {
@@ -223,10 +223,10 @@ function App() {
                 subtitle: 'Senior Manager of User Research, Growth & eCommerce (2021–2022)',
                 period: 'Jan 2021 – May 2024',
                 highlights: [
-                  'Established and grew the user research program from a 2-person US-based qualitative team to an 8-person global mixed-methods research and operations team',
-                  'Led research team to deliver actionable insights across 120+ studies that informed product and marketing decisions, influenced omni-channel roadmap priorities, and led to direct metrics improvements in acquisition, conversion, and retention',
-                  'Served as a thought partner to product, design, analytics, engineering & marketing leaders to uncover knowledge gaps and define insights roadmap',
-                  'Optimized team structure and efficiency by building processes, defining leveling & hiring strategy, selecting vendors, and managing budgets',
+                  <>Established and grew the user research program from a <strong className="text-gray-800">2-person team to an 8-person global</strong> mixed-methods research and operations team</>,
+                  <>Led research team to deliver actionable insights across <strong className="text-gray-800">120+ studies</strong> that informed product and marketing decisions, influenced omni-channel roadmap priorities, and led to direct metrics improvements in acquisition, conversion, and retention</>,
+                  <>Served as a <strong className="text-gray-800">thought partner to product, design, analytics, engineering & marketing leaders</strong> to uncover knowledge gaps and define insights roadmap</>,
+                  <>Optimized team structure and efficiency by building processes, defining leveling & hiring strategy, selecting vendors, and managing budgets</>,
                 ],
               },
               {
@@ -235,38 +235,31 @@ function App() {
                 subtitle: 'Senior Associate (2015–2019) · Experienced Associate (2013–2015)',
                 period: 'May 2013 – Oct 2020',
                 highlights: [
-                  'Led UX workstreams for 7 Fortune 500 clients from research through solution implementation',
-                  'Defined product roadmap for a pharmaceutical application using machine learning, leading to ~$3M for the next phase of work',
-                  'Co-led the creation of PwC\'s first Usability Testing Service offering, saving clients $50K–$100K per project',
+                  <>Led UX workstreams for <strong className="text-gray-800">7 Fortune 500 clients</strong> from research through solution implementation</>,
+                  <>Defined product roadmap for a pharmaceutical application using machine learning, leading to <strong className="text-gray-800">~$3M for the next phase</strong> of work</>,
+                  <>Co-led the creation of PwC's <strong className="text-gray-800">first Usability Testing Service offering</strong>, saving clients $50K–$100K per project</>,
                 ],
               },
             ].map((role, i) => (
-              <Reveal key={role.company} delay={i * 80}>
-                <div className="relative pl-8 pb-12 last:pb-0">
-                  {/* Timeline line */}
-                  {i < 2 && (
-                    <div className="absolute left-[7px] top-3 bottom-0 w-px bg-accent-200" />
-                  )}
-                  {/* Timeline dot */}
-                  <div className="absolute left-0 top-[6px] w-[15px] h-[15px] rounded-full bg-accent-600 ring-4 ring-stone-50 shadow-sm" />
-                  <div>
+              <Reveal key={role.company} delay={i * 100}>
+                <div className="bg-white rounded-xl border border-gray-200/60 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                  <div className="border-l-4 border-accent-500 p-7">
                     <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-                      <h3 className="text-xl font-bold">{role.company}</h3>
-                      <span className="text-sm text-gray-400 font-medium">{role.period}</span>
+                      <h3 className="text-lg font-bold text-gray-900">{role.company}</h3>
+                      <span className="text-sm text-accent-600 font-semibold tracking-wide">{role.period}</span>
                     </div>
                     {role.title && (
-                      <p className="text-accent-600 font-medium mb-1">{role.title}</p>
+                      <p className="text-accent-600 font-medium mb-0.5">{role.title}</p>
                     )}
                     {role.subtitle && (
-                      <p className="text-gray-400 text-sm mb-3">{role.subtitle}</p>
+                      <p className="text-gray-400 text-sm mb-4">{role.subtitle}</p>
                     )}
-                    {!role.subtitle && !role.title && <div className="mb-3" />}
-                    {!role.subtitle && role.title && <div className="mb-3" />}
-                    <ul className="space-y-1">
-                      {role.highlights.map((h) => (
-                        <li key={h} className="text-gray-600 text-sm leading-relaxed flex gap-2">
-                          <span className="text-accent-400 mt-1 shrink-0">&#8226;</span>
-                          {h}
+                    {!role.subtitle && <div className="mb-4" />}
+                    <ul className="space-y-2.5">
+                      {role.highlights.map((h, j) => (
+                        <li key={j} className="text-gray-500 text-sm leading-relaxed flex gap-3">
+                          <span className="text-accent-500 mt-0.5 shrink-0 text-lg leading-none">›</span>
+                          <span>{h}</span>
                         </li>
                       ))}
                     </ul>
