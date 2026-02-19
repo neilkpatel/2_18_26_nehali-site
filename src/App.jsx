@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 function useScrollReveal() {
   const ref = useRef(null)
@@ -34,9 +34,19 @@ function Reveal({ children, className = '', delay = 0 }) {
 }
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   const scrollTo = (id) => {
+    setMenuOpen(false)
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
+
+  const navLinks = [
+    { id: 'services', label: 'Services' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'education', label: 'Education' },
+    { id: 'contact', label: 'Contact' },
+  ]
 
   return (
     <div className="min-h-screen bg-stone-50 text-gray-900">
@@ -47,12 +57,37 @@ function App() {
             Nehali Patel
           </button>
           <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
-            <button onClick={() => scrollTo('services')} className="hover:text-accent-600 transition-colors">Services</button>
-            <button onClick={() => scrollTo('experience')} className="hover:text-accent-600 transition-colors">Experience</button>
-            <button onClick={() => scrollTo('education')} className="hover:text-accent-600 transition-colors">Education</button>
-            <button onClick={() => scrollTo('contact')} className="hover:text-accent-600 transition-colors">Contact</button>
+            {navLinks.map((link) => (
+              <button key={link.id} onClick={() => scrollTo(link.id)} className="hover:text-accent-600 transition-colors">{link.label}</button>
+            ))}
           </div>
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden p-2 -mr-2 text-gray-600 hover:text-accent-600 transition-colors"
+            aria-label="Toggle menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              {menuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              )}
+            </svg>
+          </button>
         </div>
+        {/* Mobile menu */}
+        {menuOpen && (
+          <div className="md:hidden border-t border-gray-200/50 bg-stone-50/95 backdrop-blur-sm">
+            <div className="px-6 py-4 flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <button key={link.id} onClick={() => scrollTo(link.id)} className="text-left text-sm font-medium text-gray-600 hover:text-accent-600 transition-colors">
+                  {link.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero */}
@@ -175,8 +210,7 @@ function App() {
           <div className="space-y-0">
             {[
               {
-                company: 'Self-Employed',
-                title: 'Lead User Research & Digital Strategy Consultant',
+                company: 'Lead User Research & Digital Strategy Consultant',
                 period: 'May 2024 – Present',
                 highlights: [
                   'Lead research strategy and execution for multiple AI startups by defining research programs, informing prioritization of opportunities, and guiding teams toward clear product, design, and go-to-market decisions',
@@ -220,11 +254,14 @@ function App() {
                       <h3 className="text-xl font-bold">{role.company}</h3>
                       <span className="text-sm text-gray-400 font-medium">{role.period}</span>
                     </div>
-                    <p className="text-accent-600 font-medium mb-1">{role.title}</p>
+                    {role.title && (
+                      <p className="text-accent-600 font-medium mb-1">{role.title}</p>
+                    )}
                     {role.subtitle && (
                       <p className="text-gray-400 text-sm mb-3">{role.subtitle}</p>
                     )}
-                    {!role.subtitle && <div className="mb-3" />}
+                    {!role.subtitle && !role.title && <div className="mb-3" />}
+                    {!role.subtitle && role.title && <div className="mb-3" />}
                     <ul className="space-y-1">
                       {role.highlights.map((h) => (
                         <li key={h} className="text-gray-600 text-sm leading-relaxed flex gap-2">
