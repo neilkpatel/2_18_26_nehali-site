@@ -111,7 +111,7 @@ function App() {
           <p className="text-lg text-gray-600 max-w-2xl mb-10 leading-relaxed hero-fade-up" style={{ animationDelay: '0.2s' }}>
             I lead mixed-methods research and uncover actionable insights. I set research vision, build scalable research programs, and collaborate with cross-functional partners to inform both short-term decisions and long-term strategy.
           </p>
-          <div className="grid grid-cols-3 gap-8 max-w-lg mb-10 hero-fade-up" style={{ animationDelay: '0.3s' }}>
+          <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-lg mb-10 hero-fade-up" style={{ animationDelay: '0.3s' }}>
             {[
               { number: '13+', label: 'Years Experience' },
               { number: '7', label: 'Fortune 500 Clients' },
@@ -203,9 +203,9 @@ function App() {
 
       {/* Experience */}
       <section id="experience" className="py-24 px-6">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <Reveal>
-            <h2 className="text-3xl font-bold mb-14 text-center">Experience</h2>
+            <h2 className="text-3xl font-bold mb-12 text-center">Experience</h2>
           </Reveal>
           <div className="space-y-6">
             {[
@@ -244,9 +244,9 @@ function App() {
               <Reveal key={role.company} delay={i * 100}>
                 <div className="bg-white rounded-xl border border-gray-200/60 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
                   <div className="border-l-4 border-accent-500 p-7">
-                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+                    <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 mb-1">
                       <h3 className="text-lg font-bold text-gray-900">{role.company}</h3>
-                      <span className="text-sm text-accent-600 font-semibold tracking-wide">{role.period}</span>
+                      <span className="text-sm text-accent-600 font-semibold tracking-wide shrink-0">{role.period}</span>
                     </div>
                     {role.title && (
                       <p className="text-accent-600 font-medium mb-0.5">{role.title}</p>
@@ -273,7 +273,7 @@ function App() {
 
       {/* Education */}
       <section id="education" className="py-24 px-6 bg-gradient-to-b from-stone-100 to-stone-50">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <Reveal>
             <h2 className="text-3xl font-bold mb-12 text-center">Education</h2>
           </Reveal>
@@ -304,7 +304,7 @@ function App() {
       <section id="contact" className="py-24 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent-50/50 to-stone-50" />
         <Reveal>
-          <div className="relative max-w-3xl mx-auto text-center">
+          <div className="relative max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Let's Work Together</h2>
             <p className="text-lg text-gray-500 mb-10 max-w-xl mx-auto">
               Looking for a research partner to help your team make better product decisions? I'd love to hear from you.
