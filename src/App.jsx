@@ -74,11 +74,11 @@ function App() {
             User Research & Digital Strategy Consultant
           </p>
           <p className="text-lg text-gray-600 max-w-2xl mb-10 leading-relaxed hero-fade-up" style={{ animationDelay: '0.2s' }}>
-            I conduct mixed-methods research to uncover actionable insights that drive product growth. I translate complex findings into compelling narratives that shape product, design, and marketing roadmaps.
+            I lead mixed-methods research and uncover actionable insights. I set research vision, build scalable research programs, and collaborate with cross-functional partners to inform both short-term decisions and long-term strategy.
           </p>
           <div className="grid grid-cols-3 gap-8 max-w-lg mb-10 hero-fade-up" style={{ animationDelay: '0.3s' }}>
             {[
-              { number: '12+', label: 'Years Experience' },
+              { number: '13+', label: 'Years Experience' },
               { number: '7', label: 'Fortune 500 Clients' },
               { number: 'Kellogg', label: 'MBA' },
             ].map((stat) => (
@@ -175,11 +175,12 @@ function App() {
           <div className="space-y-0">
             {[
               {
-                company: 'Freelance',
+                company: 'Self-Employed',
                 title: 'Lead User Research & Digital Strategy Consultant',
                 period: 'May 2024 – Present',
                 highlights: [
-                  'Lead user research for startups, uncovering insights to drive product and design decisions and go-to-market strategies',
+                  'Lead research strategy and execution for multiple AI startups by defining research programs, informing prioritization of opportunities, and guiding teams toward clear product, design, and go-to-market decisions',
+                  'Shape product strategy and future vision through research and audience definition, collaborating with product, design, and business teams to align on priorities and opportunities',
                 ],
               },
               {
@@ -189,16 +190,9 @@ function App() {
                 period: 'Jan 2021 – May 2024',
                 highlights: [
                   'Established and grew the user research program from a 2-person US-based qualitative team to an 8-person global mixed-methods research and operations team',
-                  'Defined and led research studies that informed product and marketing decisions, influenced roadmap priorities, and led to direct metrics improvements in acquisition, conversion, and retention',
+                  'Led research team to deliver actionable insights across 120+ studies that informed product and marketing decisions, influenced omni-channel roadmap priorities, and led to direct metrics improvements in acquisition, conversion, and retention',
+                  'Served as a thought partner to product, design, analytics, engineering & marketing leaders to uncover knowledge gaps and define insights roadmap',
                   'Optimized team structure and efficiency by building processes, defining leveling & hiring strategy, selecting vendors, and managing budgets',
-                ],
-              },
-              {
-                company: 'Vimeo',
-                title: 'Senior Manager, UX Research & Customer Insights',
-                period: 'Oct 2020 – Jan 2021',
-                highlights: [
-                  'Led UX research and customer insights for Vimeo\'s enterprise video platform',
                 ],
               },
               {
@@ -216,7 +210,7 @@ function App() {
               <Reveal key={role.company} delay={i * 80}>
                 <div className="relative pl-8 pb-12 last:pb-0">
                   {/* Timeline line */}
-                  {i < 3 && (
+                  {i < 2 && (
                     <div className="absolute left-[7px] top-3 bottom-0 w-px bg-accent-200" />
                   )}
                   {/* Timeline dot */}
