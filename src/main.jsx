@@ -44,7 +44,7 @@ function PasswordGate({ children }) {
           Nehali Patel
         </h1>
         <p style={{ color: '#78716c', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
-          This site is currently under development. Enter the password to preview.
+          Enter the password to continue.
         </p>
         <input
           type="password"
